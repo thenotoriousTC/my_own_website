@@ -1,0 +1,107 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 220 15% 6%;
+    --foreground: 180 100% 90%;
+
+    --card: 220 15% 8%;
+    --card-foreground: 180 100% 90%;
+
+    --popover: 220 15% 6%;
+    --popover-foreground: 180 100% 90%;
+
+    --primary: 191 100% 50%;
+    --primary-foreground: 220 15% 6%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 180 100% 90%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 180 100% 90%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 191 100% 50%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 220 15% 8%;
+    --sidebar-foreground: 180 100% 90%;
+    --sidebar-primary: 191 100% 50%;
+    --sidebar-primary-foreground: 220 15% 6%;
+    --sidebar-accent: 217.2 32.6% 17.5%;
+    --sidebar-accent-foreground: 180 100% 90%;
+    --sidebar-border: 217.2 32.6% 17.5%;
+    --sidebar-ring: 191 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-cyber-dark text-foreground font-rajdhani;
+    background-image: 
+      radial-gradient(circle at 20% 80%, rgba(0, 245, 255, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(191, 0, 255, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(57, 255, 20, 0.05) 0%, transparent 50%);
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0a0a0f;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #00f5ff;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #bf00ff;
+  }
+}
+
+@layer components {
+  .neon-border {
+    border: 1px solid transparent;
+    background: linear-gradient(45deg, #00f5ff, #bf00ff) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+  }
+
+  .neon-text {
+    background: linear-gradient(45deg, #00f5ff, #bf00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 10px rgba(0, 245, 255, 0.5));
+  }
+
+  .cyber-grid {
+    background-image: 
+      linear-gradient(rgba(0, 245, 255, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 245, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+}
