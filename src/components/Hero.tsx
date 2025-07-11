@@ -4,7 +4,7 @@ import { ChevronDown } from 'lucide-react';
 
 const Hero = () => {
   const [text, setText] = useState('');
-  const fullText = 'TAKI CHITER';
+  const fullText = 'dododod';
 
   const scrollToProjects = useCallback(() => {
     const projectsSection = document.getElementById('projects');
